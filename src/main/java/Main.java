@@ -34,6 +34,7 @@ public class Main {
         HttpAsyncRequestHandler<?> countryHandler = new CountryHandler();
         HttpAsyncRequestHandler<?> cityHandler = new CityHandler();
         HttpAsyncRequestHandler<?> touristSpotHandler = new TouristSpotHandler();
+        HttpAsyncRequestHandler<?> hotelHandler = new HotelHandler();
 
         HttpAsyncRequestHandler<?> defaultHandler = new ServerRequestHandler() {
             @Override
@@ -56,6 +57,7 @@ public class Main {
                 .registerHandler("/country", countryHandler)
                 .registerHandler("/city", cityHandler)
                 .registerHandler("/tourist_spot", touristSpotHandler)
+                .registerHandler("/hotel", hotelHandler)
                 //.registerHandler("/BookManagementService/books", authBookAddSearchHandler)
                 //.registerHandler("/BookManagementService/books/*", authBookRequestHandler)
                 //.registerHandler("/BookManagementService/transaction", authTransactionHandler)

@@ -83,6 +83,23 @@ touristSpot/AddTouristSpotRequest.java
  touristSpot.AddTouristSpotRequest
 handler/TouristSpotHandler.java
  handler.TouristSpotHandler
+hotel/AddHotelRequest.java
+ hotel.AddHotelRequest
 Main.java
  Main
  Main$1
+database/DatabaseHotel.java
+ database.DatabaseHotel
+hotel/HotelSearchRequest.java
+ hotel.HotelSearchRequest
+ hotel.HotelSearchRequest$Builder
+ hotel.HotelSearchRequest$SortType
+hotel/HotelSearchResponse.java
+ hotel.HotelSearchResponse
+ hotel.HotelSearchResponse$1
+ hotel.HotelSearchResponse$Builder
+handler/HotelHandler.java
+ handler.HotelHandler
+hotel/HotelService.java
+ hotel.HotelService
+ hotel.HotelService$1
