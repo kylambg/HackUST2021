@@ -66,6 +66,23 @@ city/AddCityRequest.java
  city.AddCityRequest
 handler/CountryHandler.java
  handler.CountryHandler
+touristSpot/TouristSpotSearchRequest.java
+ touristSpot.TouristSpotSearchRequest
+ touristSpot.TouristSpotSearchRequest$Builder
+ touristSpot.TouristSpotSearchRequest$SortType
+database/DatabaseTouristSpot.java
+ database.DatabaseTouristSpot
+touristSpot/TouristSpotSearchResponse.java
+ touristSpot.TouristSpotSearchResponse
+ touristSpot.TouristSpotSearchResponse$1
+ touristSpot.TouristSpotSearchResponse$Builder
+touristSpot/TouristSpotService.java
+ touristSpot.TouristSpotService
+ touristSpot.TouristSpotService$1
+touristSpot/AddTouristSpotRequest.java
+ touristSpot.AddTouristSpotRequest
+handler/TouristSpotHandler.java
+ handler.TouristSpotHandler
 Main.java
  Main
  Main$1

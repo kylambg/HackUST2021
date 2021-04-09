@@ -33,6 +33,7 @@ public class Main {
         HttpAsyncRequestHandler<?> logoutHandler = new LogoutRequestHandler();
         HttpAsyncRequestHandler<?> countryHandler = new CountryHandler();
         HttpAsyncRequestHandler<?> cityHandler = new CityHandler();
+        HttpAsyncRequestHandler<?> touristSpotHandler = new TouristSpotHandler();
 
         HttpAsyncRequestHandler<?> defaultHandler = new ServerRequestHandler() {
             @Override
@@ -54,6 +55,7 @@ public class Main {
                 .registerHandler("/logout", logoutHandler)
                 .registerHandler("/country", countryHandler)
                 .registerHandler("/city", cityHandler)
+                .registerHandler("/tourist_spot", touristSpotHandler)
                 //.registerHandler("/BookManagementService/books", authBookAddSearchHandler)
                 //.registerHandler("/BookManagementService/books/*", authBookRequestHandler)
                 //.registerHandler("/BookManagementService/transaction", authTransactionHandler)
