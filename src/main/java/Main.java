@@ -37,6 +37,7 @@ public class Main {
         HttpAsyncRequestHandler<?> hotelHandler = new HotelHandler();
         HttpAsyncRequestHandler<?> infoHandler = new InfoHandler();
         HttpAsyncRequestHandler<?> quarantineInfoHandler = new QuarantineInfoHandler();
+        HttpAsyncRequestHandler<?> flightHandler = new FlightHandler();
 
         HttpAsyncRequestHandler<?> defaultHandler = new ServerRequestHandler() {
             @Override
@@ -62,6 +63,7 @@ public class Main {
                 .registerHandler("/hotel", hotelHandler)
                 .registerHandler("/info", infoHandler)
                 .registerHandler("/quarantine_info", quarantineInfoHandler)
+                .registerHandler("/flight", flightHandler)
                 //.registerHandler("/BookManagementService/books", authBookAddSearchHandler)
                 //.registerHandler("/BookManagementService/books/*", authBookRequestHandler)
                 //.registerHandler("/BookManagementService/transaction", authTransactionHandler)
