@@ -1,105 +1,135 @@
-handler/BasicRequestHandler.java
- handler.BasicRequestHandler
-exception/TokenNotFoundException.java
- exception.TokenNotFoundException
-auth/LoginResponse.java
- auth.LoginResponse
-exception/InternalServerException.java
- exception.InternalServerException
-exception/BadCommitException.java
- exception.BadCommitException
-exception/NoAvailableTransactionException.java
- exception.NoAvailableTransactionException
-exception/DuplicateLoginException.java
- exception.DuplicateLoginException
-exception/LockWaitTimeoutException.java
- exception.LockWaitTimeoutException
-handler/LogoutRequestHandler.java
- handler.LogoutRequestHandler
-exception/BadTransactionIdException.java
- exception.BadTransactionIdException
-exception/BadCredentialsException.java
- exception.BadCredentialsException
-exception/BadTransactionActionException.java
- exception.BadTransactionActionException
-handler/ServerRequestHandler.java
- handler.ServerRequestHandler
-handler/JsonRequestHandler.java
- handler.JsonRequestHandler
-handler/LoginRequestHandler.java
- handler.LoginRequestHandler
-database/ConnectionManager.java
- database.ConnectionManager
-auth/LoginRequest.java
- auth.LoginRequest
-country/CountrySearchRequest.java
- country.CountrySearchRequest
-auth/AuthService.java
- auth.AuthService
-country/AddCountryRequest.java
- country.AddCountryRequest
-country/CountrySearchResponse.java
- country.CountrySearchResponse
- country.CountrySearchResponse$1
- country.CountrySearchResponse$Builder
-database/DatabaseUser.java
- database.DatabaseUser
 city/CitySearchResponse.java
  city.CitySearchResponse
  city.CitySearchResponse$1
  city.CitySearchResponse$Builder
-database/DatabaseCountry.java
- database.DatabaseCountry
-country/CountryService.java
- country.CountryService
-city/CitySearchRequest.java
- city.CitySearchRequest
- city.CitySearchRequest$1
- city.CitySearchRequest$Builder
-handler/CityHandler.java
- handler.CityHandler
-city/CityService.java
- city.CityService
-database/DatabaseCity.java
- database.DatabaseCity
-city/AddCityRequest.java
- city.AddCityRequest
-handler/CountryHandler.java
- handler.CountryHandler
-touristSpot/TouristSpotSearchRequest.java
- touristSpot.TouristSpotSearchRequest
- touristSpot.TouristSpotSearchRequest$Builder
- touristSpot.TouristSpotSearchRequest$SortType
-database/DatabaseTouristSpot.java
- database.DatabaseTouristSpot
-touristSpot/TouristSpotSearchResponse.java
- touristSpot.TouristSpotSearchResponse
- touristSpot.TouristSpotSearchResponse$1
- touristSpot.TouristSpotSearchResponse$Builder
-touristSpot/TouristSpotService.java
- touristSpot.TouristSpotService
- touristSpot.TouristSpotService$1
-touristSpot/AddTouristSpotRequest.java
- touristSpot.AddTouristSpotRequest
-handler/TouristSpotHandler.java
- handler.TouristSpotHandler
-hotel/AddHotelRequest.java
- hotel.AddHotelRequest
-Main.java
- Main
- Main$1
-database/DatabaseHotel.java
- database.DatabaseHotel
 hotel/HotelSearchRequest.java
  hotel.HotelSearchRequest
  hotel.HotelSearchRequest$Builder
  hotel.HotelSearchRequest$SortType
+auth/AuthService.java
+ auth.AuthService
+country/CountryService.java
+ country.CountryService
+auth/LoginRequest.java
+ auth.LoginRequest
+city/CityService.java
+ city.CityService
+database/DatabaseCity.java
+ database.DatabaseCity
+database/DatabaseHotel.java
+ database.DatabaseHotel
+exception/NoAvailableTransactionException.java
+ exception.NoAvailableTransactionException
+handler/InfoHandler.java
+ handler.InfoHandler
+country/CountrySearchRequest.java
+ country.CountrySearchRequest
+covidinfo/CovidInfoSearchResponse.java
+ covidinfo.CovidInfoSearchResponse
+ covidinfo.CovidInfoSearchResponse$1
+ covidinfo.CovidInfoSearchResponse$Builder
+exception/BadTransactionIdException.java
+ exception.BadTransactionIdException
+touristSpot/TouristSpotSearchRequest.java
+ touristSpot.TouristSpotSearchRequest
+ touristSpot.TouristSpotSearchRequest$Builder
+ touristSpot.TouristSpotSearchRequest$SortType
+touristSpot/TouristSpotService.java
+ touristSpot.TouristSpotService
+ touristSpot.TouristSpotService$1
+auth/LoginResponse.java
+ auth.LoginResponse
+city/CitySearchRequest.java
+ city.CitySearchRequest
+ city.CitySearchRequest$1
+ city.CitySearchRequest$Builder
+exception/BadCommitException.java
+ exception.BadCommitException
+database/DatabaseTouristSpot.java
+ database.DatabaseTouristSpot
+city/AddCityRequest.java
+ city.AddCityRequest
+database/DatabaseCountry.java
+ database.DatabaseCountry
+exception/DuplicateLoginException.java
+ exception.DuplicateLoginException
 hotel/HotelSearchResponse.java
  hotel.HotelSearchResponse
  hotel.HotelSearchResponse$1
  hotel.HotelSearchResponse$Builder
-handler/HotelHandler.java
- handler.HotelHandler
+exception/BadCredentialsException.java
+ exception.BadCredentialsException
+exception/InternalServerException.java
+ exception.InternalServerException
+exception/BadTransactionActionException.java
+ exception.BadTransactionActionException
+handler/CountryHandler.java
+ handler.CountryHandler
+exception/TokenNotFoundException.java
+ exception.TokenNotFoundException
+country/AddCountryRequest.java
+ country.AddCountryRequest
+covidinfo/CovidInfoSearchRequest.java
+ covidinfo.CovidInfoSearchRequest
+covidinfo/CovidInfoService.java
+ covidinfo.CovidInfoService
+database/ConnectionManager.java
+ database.ConnectionManager
+database/DatabaseInfo.java
+ database.DatabaseInfo
+handler/CityHandler.java
+ handler.CityHandler
+database/DatabaseUser.java
+ database.DatabaseUser
+covidinfo/AddCovidInfoRequest.java
+ covidinfo.AddCovidInfoRequest
+handler/JsonRequestHandler.java
+ handler.JsonRequestHandler
+handler/ServerRequestHandler.java
+ handler.ServerRequestHandler
+handler/BasicRequestHandler.java
+ handler.BasicRequestHandler
+handler/LoginRequestHandler.java
+ handler.LoginRequestHandler
+touristSpot/AddTouristSpotRequest.java
+ touristSpot.AddTouristSpotRequest
+handler/LogoutRequestHandler.java
+ handler.LogoutRequestHandler
+touristSpot/TouristSpotSearchResponse.java
+ touristSpot.TouristSpotSearchResponse
+ touristSpot.TouristSpotSearchResponse$1
+ touristSpot.TouristSpotSearchResponse$Builder
 hotel/HotelService.java
  hotel.HotelService
  hotel.HotelService$1
+exception/LockWaitTimeoutException.java
+ exception.LockWaitTimeoutException
+hotel/AddHotelRequest.java
+ hotel.AddHotelRequest
+handler/HotelHandler.java
+ handler.HotelHandler
+handler/TouristSpotHandler.java
+ handler.TouristSpotHandler
+country/CountrySearchResponse.java
+ country.CountrySearchResponse
+ country.CountrySearchResponse$1
+ country.CountrySearchResponse$Builder
+quarantineinfo/AddQuarantineRequest.java
+ quarantineinfo.AddQuarantineRequest
+quarantineinfo/QuarantineSearchRequest.java
+ quarantineinfo.QuarantineSearchRequest
+ quarantineinfo.QuarantineSearchRequest$1
+ quarantineinfo.QuarantineSearchRequest$Builder
+Main.java
+ Main
+ Main$1
+database/DatabaseQuarantineInfo.java
+ database.DatabaseQuarantineInfo
+quarantineinfo/QuarantineSearchResponse.java
+ quarantineinfo.QuarantineSearchResponse
+ quarantineinfo.QuarantineSearchResponse$1
+ quarantineinfo.QuarantineSearchResponse$Builder
+handler/QuarantineInfoHandler.java
+ handler.QuarantineInfoHandler
+quarantineinfo/QuarantineService.java
+ quarantineinfo.QuarantineService
