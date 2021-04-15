@@ -22,6 +22,9 @@ public class DatabaseTouristSpot {
                 if (request.isSearchByName()) {
                     preparedStatement.setString(count++, request.getSpotName());
                 }
+                if (request.isSearchBySpotID()) {
+                    preparedStatement.setInt(count++, request.getSpotID());
+                }
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     String spotID = resultSet.getString("touristspotid");

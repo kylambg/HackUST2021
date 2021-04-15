@@ -16,7 +16,7 @@ public class TouristSpotService {
     public TouristSpotSearchResponse searchCity(TouristSpotSearchRequest request) throws SQLException {
         StringBuilder searchSql = new StringBuilder();
         searchSql.append("SELECT * FROM tourist_spot");
-        if(request.isSearchByCityID() || request.isSearchByName()){
+        if(request.isSearchByCityID() || request.isSearchByName() || request.isSearchBySpotID()){
             boolean multiStatement = false;
             searchSql.append(" WHERE");
             if(request.isSearchByCityID()){
@@ -28,6 +28,13 @@ public class TouristSpotService {
                     searchSql.append(" AND");
                 }
                 searchSql.append(" INSTR(name, ?) > 0");
+                multiStatement = true;
+            }
+            if(request.isSearchBySpotID()){
+                if(multiStatement){
+                    searchSql.append(" AND");
+                }
+                searchSql.append(" touristspotid=?");
                 multiStatement = true;
             }
         }

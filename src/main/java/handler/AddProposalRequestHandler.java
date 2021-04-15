@@ -23,13 +23,8 @@ public class AddProposalRequestHandler extends JsonRequestHandler<AddProposalReq
             return;
         }
 
-        try {
-            int id = ProposalService.getInstance().addBook(requestBody);
-            response.setStatusCode(HttpStatus.SC_CREATED);
-            response.setHeader("Location", "/books/" + id);
-        } catch (ProposalExistException e) {
-            response.setStatusCode(HttpStatus.SC_CONFLICT);
-            response.setHeader("Duplicate record", "/books/" + e.getId());
-        }
+        int id = ProposalService.getInstance().addProposal(requestBody);
+        response.setStatusCode(HttpStatus.SC_CREATED);
+        response.setHeader("Location", "/books/" + id);
     }
 }

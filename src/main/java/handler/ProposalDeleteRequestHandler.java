@@ -2,17 +2,19 @@ package handler;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import exception.InternalServerException;
+import exception.ProposalNotExistException;
 import proposal.AddProposalRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.jetbrains.annotations.Nullable;
+import proposal.ProposalService;
 
 import java.io.InputStream;
 import java.util.Map;
 
 public class ProposalDeleteRequestHandler extends ServerRequestHandler{
 
-    private static final String PATH_PREFIX = "/proposals/";
+    private static final String PATH_PREFIX = "/proposal/";
     public ProposalDeleteRequestHandler() {
     }
     @Override
@@ -30,7 +32,7 @@ public class ProposalDeleteRequestHandler extends ServerRequestHandler{
         String idFromURL = path.substring(PATH_PREFIX.length());
 
         try {
-            boolean success = ProposalService.getInstance().deleteBook(Integer.parseInt(idFromURL));
+            boolean success = ProposalService.getInstance().deleteProposal(Integer.parseInt(idFromURL));
             if (!success) {
                 response.setStatusCode(HttpStatus.SC_BAD_REQUEST);
                 return;

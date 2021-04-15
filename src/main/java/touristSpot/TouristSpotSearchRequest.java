@@ -5,7 +5,9 @@ public class TouristSpotSearchRequest {
     private boolean searchByName = false;
     private boolean sorted = false;
     private boolean sortReversed = false;
+    private boolean searchBySpotID = false;
 
+    private int spotID;
     private int cityID;
     private String spotName;
     private int charge;
@@ -14,7 +16,8 @@ public class TouristSpotSearchRequest {
 
     public enum SortType {
         BY_CITYID,
-        BY_CHARGE
+        BY_CHARGE,
+        BY_SPOTID
     }
 
     public TouristSpotSearchRequest(){}
@@ -47,6 +50,14 @@ public class TouristSpotSearchRequest {
         return charge;
     }
 
+    public boolean isSearchBySpotID() {
+        return searchBySpotID;
+    }
+
+    public int getSpotID() {
+        return spotID;
+    }
+
     public SortType getSortType() {
         return sortType;
     }
@@ -67,6 +78,12 @@ public class TouristSpotSearchRequest {
         public Builder cityName(String name){
             instance.searchByName = true;
             instance.spotName = name;
+            return this;
+        }
+
+        public Builder touristSpotID(int spotID){
+            instance.searchBySpotID = true;
+            instance.spotID = spotID;
             return this;
         }
 
