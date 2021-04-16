@@ -1,0 +1,9 @@
+<router-outlet></router-outlet>
+<div id="snackbar">
+  <div *ngFor="let msg of messages" class="text-right text-white">
+        <span [ngClass]="'bg-' + msg.type">
+            <b *ngIf="msg.title">{{msg.title}} <br/></b>
+          {{msg.message}}
+        </span>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<h3 class="text-secondary">Residency/Citizenship</h3>
+<p>Here you can set your residency, citizenship and other immigration information.</p>
+<app-loading-spinner *ngIf="statusLoading"></app-loading-spinner>
+<ng-container *ngIf="!statusLoading">
+  <ul class="list-group mb-3">
+    <li class="list-group-item" *ngFor="let status of statues;">
+      <img [src]="'https://flagcdn.com/' + status.country.iso_code + '.svg'" class="mr-1" style="width: 16px">
+      {{status.name}}
+      <div style="position: absolute; right: 20px; top: 10px; cursor: pointer;"
+           (click)="removeStatus(status.id)">&#10006;</div>
+    </li>
+  </ul>
+  <div class="row" style="max-width: 400px">
+    <div class="col-9 pr-0">
+      <div class="form-group mr-2" >
+        <ng-template #rt let-r="result" let-t="term">
+          <img [src]="'https://flagcdn.com/' + r.country.iso_code + '.svg'" class="mr-1" style="width: 16px">
+          <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+        </ng-template>
+        <input id="new-status" type="text" class="form-control"
+               [(ngModel)]="newStatus" [ngbTypeahead]="search" [resultTemplate]="rt"
+               [inputFormatter]="statusFormatter" />
+        <p *ngIf="searching" class="text-success mb-0">Loading status list...</p>
+        <p *ngIf="searchFailed" class="text-danger mb-0">Sorry, could not load status list.</p>
+        <p *ngIf="noItems" class="text-danger mb-0">No status matches the entered text.</p>
+      </div>
+    </div>
+    <div class="col-3 pl-0">
+      <button class="btn btn-success" [disabled]="saving" (click)="addStatus()">Add</button>
+    </div>
+  </div>
+  <p class="text-success" *ngIf="saving">Saving...</p>
+</ng-container>
+
+
+
+
+

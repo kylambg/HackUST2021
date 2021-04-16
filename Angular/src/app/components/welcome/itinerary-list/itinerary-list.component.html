@@ -1,0 +1,17 @@
+<h3 class="text-secondary">Your Itineraries</h3>
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+<ng-container *ngIf="!loading">
+  <button class="btn btn-success mb-3" (click)="newItinerary()">New Itinerary</button>
+  <ul class="list-group mb-3">
+    <li class="list-group-item" *ngFor="let itinerary of itineraries;">
+      Created at {{itinerary.created_at | date : 'dd-MMM-y hh:mm a'}} <button class="btn btn-sm btn-success" routerLink="/planner/{{itinerary.id}}">Edit</button>
+      <div style="position: absolute; right: 20px; top: 15px; cursor: pointer;"
+           (click)="removeItinerary(itinerary.id)">&#10006;</div>
+    </li>
+  </ul>
+</ng-container>
+
+
+
+
+

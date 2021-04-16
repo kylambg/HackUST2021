@@ -1,0 +1,6 @@
+<div class="container-fluid py-3 py-md-5" style="max-width: 800px">
+  <h2 class="text-primary">Welcome {{userInfo.first_name}}!</h2>
+  <p>Your E-mail: {{userInfo.email}} | <a href="javascript:void(0)" (click)="logout()">Logout</a></p>
+  <hr>
+  <router-outlet></router-outlet>
+</div>

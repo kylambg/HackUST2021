@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('assets/Roboto/style.css')
+$theme-colors: ( "primary": #0066B6, "secondary": #66001C, "success": #009D53, "gray": #999 )
+$font-family-sans-serif: 'Roboto Regular', sans-serif
+$headings-font-family: 'Roboto Bold', sans-serif
+@import '~bootstrap/scss/bootstrap.scss'
+
+/****** TOAST MESSAGE ******/
+#snackbar
+  position: fixed
+  z-index: 100000000
+  right: 20px
+  bottom: 30px
+
+  div
+    margin-top: 10px
+
+  span
+    display: inline-block
+    margin: 0
+    padding: 10px 20px

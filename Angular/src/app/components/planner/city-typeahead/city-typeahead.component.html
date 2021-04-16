@@ -1,0 +1,17 @@
+<input id="{{name}}" name="{{name}}" type="text"
+       class="form-control"
+       [(ngModel)]="value"
+       (ngModelChange)="valueChange.emit($event)"
+       [placeholder]="placeholderText"
+       [ngbTypeahead]="search" [inputFormatter]="inputFormatter" [resultTemplate]="rt" [editable]='false'/>
+<p *ngIf="searching" class="text-success mb-0">{{loadingText}}</p>
+<p *ngIf="searchFailed" class="text-danger mb-0">{{errorText}}</p>
+<p *ngIf="noItems" class="text-danger mb-0">{{noMatchText}}</p>
+
+<ng-template #rt let-r="result" let-t="term">
+  <img [src]="'https://flagcdn.com/' + r.region.country.iso_code + '.svg'" class="mr-1" style="width: 16px">
+  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+  <p class="small mb-0">
+    <ngb-highlight [result]="r.region.name + ', ' + r.region.country.name" [term]="t"></ngb-highlight>
+  </p>
+</ng-template>

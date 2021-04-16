@@ -45,17 +45,14 @@ quarantineinfo/QuarantineSearchResponse.java
  quarantineinfo.QuarantineSearchResponse$Builder
 quarantineinfo/AddQuarantineRequest.java
  quarantineinfo.AddQuarantineRequest
-touristSpot/TouristSpotSearchRequest.java
- touristSpot.TouristSpotSearchRequest
- touristSpot.TouristSpotSearchRequest$Builder
- touristSpot.TouristSpotSearchRequest$SortType
+database/DatabaseFlight.java
+ database.DatabaseFlight
 flight/FlightSearchRequest.java
  flight.FlightSearchRequest
  flight.FlightSearchRequest$Builder
  flight.FlightSearchRequest$SortType
-touristSpot/TouristSpotService.java
- touristSpot.TouristSpotService
- touristSpot.TouristSpotService$1
+database/DatabaseUser.java
+ database.DatabaseUser
 auth/LoginResponse.java
  auth.LoginResponse
 city/CitySearchRequest.java
@@ -64,8 +61,8 @@ city/CitySearchRequest.java
  city.CitySearchRequest$Builder
 exception/BadCommitException.java
  exception.BadCommitException
-database/DatabaseTouristSpot.java
- database.DatabaseTouristSpot
+handler/LogoutRequestHandler.java
+ handler.LogoutRequestHandler
 city/AddCityRequest.java
  city.AddCityRequest
 database/DatabaseCountry.java
@@ -126,8 +123,8 @@ hotel/AddHotelRequest.java
  hotel.AddHotelRequest
 handler/HotelHandler.java
  handler.HotelHandler
-handler/TouristSpotHandler.java
- handler.TouristSpotHandler
+handler/CountryHandler.java
+ handler.CountryHandler
 country/CountrySearchResponse.java
  country.CountrySearchResponse
  country.CountrySearchResponse$1
@@ -142,11 +139,38 @@ handler/LoginRequestHandler.java
  handler.LoginRequestHandler
 exception/InternalServerException.java
  exception.InternalServerException
-handler/CountryHandler.java
- handler.CountryHandler
-handler/LogoutRequestHandler.java
- handler.LogoutRequestHandler
-database/DatabaseUser.java
- database.DatabaseUser
-database/DatabaseFlight.java
- database.DatabaseFlight
+touristSpot/TouristSpotSearchRequest.java
+ touristSpot.TouristSpotSearchRequest
+ touristSpot.TouristSpotSearchRequest$Builder
+ touristSpot.TouristSpotSearchRequest$SortType
+touristSpot/TouristSpotService.java
+ touristSpot.TouristSpotService
+ touristSpot.TouristSpotService$1
+handler/AddProposalRequestHandler.java
+ handler.AddProposalRequestHandler
+proposal/ProposalService.java
+ proposal.ProposalService
+handler/ProposalSearchRequestHandler.java
+ handler.ProposalSearchRequestHandler
+database/DatabaseTouristSpot.java
+ database.DatabaseTouristSpot
+proposal/ProposalSearchRequest.java
+ proposal.ProposalSearchRequest
+handler/ProposalUpdateRequestHandler.java
+ handler.ProposalUpdateRequestHandler
+handler/TouristSpotHandler.java
+ handler.TouristSpotHandler
+proposal/ProposalSearchResponse.java
+ proposal.ProposalSearchResponse
+ proposal.ProposalSearchResponse$1
+ proposal.ProposalSearchResponse$Builder
+proposal/AddProposalRequest.java
+ proposal.AddProposalRequest
+handler/ProposalDeleteRequestHandler.java
+ handler.ProposalDeleteRequestHandler
+exception/ProposalNotExistException.java
+ exception.ProposalNotExistException
+exception/ProposalExistException.java
+ exception.ProposalExistException
+database/DatabaseProposal.java
+ database.DatabaseProposal

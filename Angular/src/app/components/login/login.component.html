@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-12 shadow-lg p-4 mx-auto mt-5 border" style="max-width: 400px" *ngIf="!showRegister">
+    <h4 class="text-secondary mb-4">Login</h4>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" name="username" [(ngModel)]="loginData.username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="loginData.password">
+    </div>
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="remember" name="remember" [(ngModel)]="remember">
+      <label class="form-check-label" for="remember">Remember</label>
+    </div>
+    <button class="btn btn-success mt-2" (click)="login()">Login</button>
+    <button class="btn btn-link" (click)="toggleRegister()">Register?</button>
+  </div>
+
+  <div class="col-12 shadow-lg p-4 mx-auto mt-5 border" style="max-width: 400px" *ngIf="showRegister">
+    <h4 class="text-secondary mb-4">Register</h4>
+    <div class="form-group">
+      <label for="register_fn">First Name</label>
+      <input type="text" class="form-control" id="register_fn" name="register_fn" [(ngModel)]="registerData.first_name">
+    </div>
+    <div class="form-group">
+      <label for="register_ln">Last Name</label>
+      <input type="text" class="form-control" id="register_ln" name="register_ln" [(ngModel)]="registerData.last_name">
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="text" class="form-control" id="email" name="email" [(ngModel)]="registerData.email">
+    </div>
+    <div class="form-group">
+      <label for="register_username">Username</label>
+      <input type="text" class="form-control" id="register_username" name="username" [(ngModel)]="registerData.username">
+    </div>
+    <div class="form-group">
+      <label for="register_password">Password</label>
+      <input type="password" class="form-control" id="register_password" name="register_password" [(ngModel)]="registerData.password">
+    </div>
+    <div class="form-group">
+      <label for="register_password_repeat">Repeat Password</label>
+      <input type="password" class="form-control" id="register_password_repeat" name="register_password_repeat"
+             [(ngModel)]="registerData.repeat_password">
+    </div>
+    <button type="submit" class="btn btn-success mt-2" (click)="register()">Register</button>
+    <button class="btn btn-link" (click)="toggleRegister()">Already have an account? Login</button>
+  </div>
+</div>

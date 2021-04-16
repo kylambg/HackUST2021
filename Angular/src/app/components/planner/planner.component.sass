@@ -1,0 +1,34 @@
+.wizard
+  width: 100%
+  position: relative
+
+.wizard:before
+  top: 22px
+  bottom: 0
+  position: absolute
+  content: " "
+  width: 66.66667%
+  margin-left: 16.6667%
+  height: 1px
+  background-color: #ccc
+  z-order: 0
+
+.wizard .step
+  display: block
+  float: left
+  width: 33.33%
+  text-align: center
+  position: relative
+
+
+.btn-circle
+  width: 43px
+  height: 43px
+  text-align: center
+  padding: 6px 0
+  font-size: 20px
+  line-height: 1.428571429
+  border-radius: 40px
+
+button[disabled].btn-circle
+  cursor: not-allowed

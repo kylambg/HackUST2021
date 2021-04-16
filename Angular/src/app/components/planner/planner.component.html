@@ -1,0 +1,34 @@
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+<ng-container *ngIf="!loading">
+  <h3 class="text-secondary"> <span routerLink="/">&#8962;</span> Itinerary Planner</h3>
+  <p class="text-gray">Plan created at {{itinerary.created_at | date : 'dd-MMM-y hh:mm a'}}</p>
+
+  <div class="wizard row mb-5 mt-3" style="max-width: 500px;">
+    <div class="step">
+      <button type="button" class="btn btn-circle" routerLink="origin"
+              [ngClass] = "{'btn-success': itinerary.status!='origin',
+              'btn-primary': itinerary.status == 'origin'}">1</button>
+      <p class="mb-0">Leaving from</p>
+    </div>
+    <div class="step">
+      <button type="button" class="btn btn-circle" routerLink="destination"
+              [ngClass] = "{'btn-gray': itinerary.status=='origin', 'btn-success': itinerary.status=='plan',
+              'btn-primary': itinerary.status == 'destination'}"
+              [disabled]="itinerary.status == 'origin'">2</button>
+      <p class="mb-0">Destinations</p>
+    </div>
+    <div class="step">
+      <button type="button" class="btn btn-circle" routerLink="plan"
+              [ngClass] = "{'btn-gray': itinerary.status !='plan',
+              'btn-primary': itinerary.status == 'plan'}"
+              [disabled]="itinerary.status != 'plan'">3</button>
+      <p class="mb-0">Plan</p>
+    </div>
+    <!--
+     [disabled]="!isNew" -->
+  </div>
+
+  <router-outlet></router-outlet>
+
+</ng-container>

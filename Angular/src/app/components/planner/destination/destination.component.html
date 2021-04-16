@@ -1,0 +1,37 @@
+<h5 class="text-primary">Origin and Past Travel</h5>
+<p class="mb-1">Depart from {{itinerary.origin_details.leaving_from.name}} ({{itinerary.origin_details.leaving_from.airport_code}}) on
+{{itinerary.origin_details.departure_date | date: 'dd-MMM-y'}}.</p>
+<ng-container *ngIf ="itinerary && itinerary.origin_details && itinerary.origin_details.past_travels.length > 0">
+  <p class="mb-1">You have previously visited:</p>
+  <ul>
+    <li *ngFor="let destination of itinerary.origin_details.past_travels">
+      {{destination.city.name}} ({{destination.city.airport_code}}) until
+      {{destination.last_date | date: 'dd-MMM-y'}}</li>
+  </ul>
+</ng-container>
+<hr>
+<h5 class="text-primary">Proposed Destinations</h5>
+<p>Include source city as final destination if applicable.</p>
+<div>
+  <div class="form-row">
+    <div class="col">City</div>
+    <div class="col">Proposed Arrival Date</div>
+  </div>
+  <div class="form-row mb-2" *ngFor="let destination of destinations; let i=index;">
+    <div class="col-6">
+      <app-city-typeahead name="city-{{i}}" [(value)]="destination.city"></app-city-typeahead>
+    </div>
+    <div class="col-5">
+      <input type="text" class="form-control" ngbDatepicker name="date-{{i}}" id="date-{{i}}"
+             [(ngModel)]="destination.date" #date="ngbDatepicker" onkeydown="return false"
+             (click)="date.toggle()" required>
+    </div>
+    <div class="col-1">
+      <div style="position: absolute; right: 20px; top: 10px; cursor: pointer;"
+           (click)="removeDestination(i)">&#10006;</div>
+    </div>
+  </div>
+  <a href="javascript:void(0)" (click)="addDestination()">&#10133; Add Proposed Destination</a>
+</div>
+
+<button class="btn btn-success mt-4" [disabled]="saving" (click)="save()">Next</button>

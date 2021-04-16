@@ -1,0 +1,40 @@
+<div style="max-width: 400px">
+  <div class="form-group">
+    <label>Leaving from:</label>
+    <app-city-typeahead name="leaving_from" [(value)]="originDetails.leaving_from"></app-city-typeahead>
+  </div>
+  <div class="form-group">
+    <label>Departure Date:</label>
+    <input type="text" class="form-control" ngbDatepicker name="date" id="date"
+           [(ngModel)]="originDetails.departure_date" #date="ngbDatepicker" onkeydown="return false"
+           (click)="date.toggle()" required>
+  </div>
+</div>
+<hr>
+<h5 class="text-primary">Past Travel History</h5>
+<p>This will help to match with regulations on past travel.
+  Try to entry the past 30 days travel history for accurate results.</p>
+
+<div>
+  <div class="form-row">
+    <div class="col">City</div>
+    <div class="col">Last visited date</div>
+  </div>
+  <div class="form-row mb-2" *ngFor="let destination of originDetails.past_travels; let i=index;">
+    <div class="col-6">
+      <app-city-typeahead name="past-{{i}}" [(value)]="destination.city"></app-city-typeahead>
+    </div>
+    <div class="col-5">
+      <input type="text" class="form-control" ngbDatepicker name="past-date-{{i}}" id="past-date-{{i}}"
+             [(ngModel)]="destination.last_date" #date="ngbDatepicker" onkeydown="return false"
+             (click)="date.toggle()" required>
+    </div>
+    <div class="col-1">
+      <div style="position: absolute; right: 20px; top: 10px; cursor: pointer;"
+           (click)="removeHistory(i)">&#10006;</div>
+    </div>
+  </div>
+  <a href="javascript:void(0)" (click)="addPastTravel()">&#10133; Add History</a>
+</div>
+
+<button class="btn btn-success mt-4" [disabled]="saving" (click)="save()">Next</button>
